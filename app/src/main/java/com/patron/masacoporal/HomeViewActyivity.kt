@@ -7,13 +7,7 @@ class HomeViewActyivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_view_actyivity)
-        print("Esto es una fiesta")
-        print("Esto es una fiesta")
-        print("Esto es una fiesta")
-        print("Esto es una fiesta")
-        print("Esto es una fiesta")
-        print("Esto es una fiesta")
-        print("Esto es una fiesta")
+
 
     }
 }
