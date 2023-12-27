@@ -8,6 +8,6 @@ class HomeViewActyivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_view_actyivity)
 
-
+        // (":)")
     }
 }
