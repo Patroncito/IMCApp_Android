@@ -9,21 +9,21 @@ import com.patron.masacoporal.HomeViewActyivity.Companion.IMC_KEY
 
 class ResultIMCActivity : AppCompatActivity() {
 
-    private lateinit var tvStatus : TextView
-    private lateinit var tvResult : TextView
-    private lateinit var tvDescription : TextView
-    private  lateinit var btnReCalculate : Button
+    private lateinit var tvStatus: TextView
+    private lateinit var tvResult: TextView
+    private lateinit var tvDescription: TextView
+    private lateinit var btnReCalculate: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result_imcactivity)
-        val resultIMC : String = intent.extras?.getString(IMC_KEY) ?: ""
+        val resultIMC: String = intent.extras?.getString(IMC_KEY) ?: ""
 
         initComponents()
         initUI(resultIMC)
+        initListeners()
     }
-
 
 
     private fun initComponents() {
@@ -34,9 +34,10 @@ class ResultIMCActivity : AppCompatActivity() {
         btnReCalculate = findViewById(R.id.btnReCalculate)
 
     }
-    private fun initUI(result : String) {
+
+    private fun initUI(result: String) {
         tvResult.text = result
-        val resultInDouble : Double =  result.toDouble()
+        val resultInDouble: Double = result.toDouble()
 
         when (resultInDouble) {
             in 0.0..18.5 -> {
@@ -52,27 +53,32 @@ class ResultIMCActivity : AppCompatActivity() {
                 tvDescription.text = getString(R.string.weightNormal)
 
             }
+
             in 25.0..29.9 -> {
                 tvStatus.text = getString(R.string.weightHigh)
                 tvStatus.setTextColor(ContextCompat.getColor(this, R.color.verde))
                 tvDescription.text = getString(R.string.weightHighDescription)
 
             }
+
             in 30.0..34.9 -> {
                 tvStatus.text = getString(R.string.overweight1)
                 tvStatus.setTextColor(ContextCompat.getColor(this, R.color.amarillo))
                 tvDescription.text = getString(R.string.weightHigDescription)
             }
+
             in 35.0..39.9 -> {
                 tvStatus.text = getString(R.string.overweight2)
                 tvStatus.setTextColor(ContextCompat.getColor(this, R.color.naranja))
                 tvDescription.text = getString(R.string.overweight2Description)
             }
+
             in 40.0..100.0 -> {
                 tvStatus.text = getString(R.string.overweight3)
                 tvStatus.setTextColor(ContextCompat.getColor(this, R.color.naranja))
                 tvDescription.text = getString(R.string.overweight3Description)
             }
+
             else -> {
                 tvResult.text = "0"
                 tvStatus.text = getString(R.string.errorStatus)
@@ -81,5 +87,11 @@ class ResultIMCActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun initListeners() {
+        btnReCalculate.setOnClickListener {
+            finish()
+        }
     }
 }
