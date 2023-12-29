@@ -6,4 +6,5 @@
     <string name="placeHolderHeight">120 cm</string>
     <string name="weight">Peso</string>
     <string name="age">Edad</string>
+    <string name="calculate">Calcular</string>
 </resources>

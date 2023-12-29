@@ -3,6 +3,7 @@ package com.patron.masacoporal
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
@@ -12,7 +13,6 @@ import org.w3c.dom.Text
 import java.text.DecimalFormat
 
 class HomeViewActyivity : AppCompatActivity() {
-
     private var currentWeight: Int = 60
     private var currentAge: Int = 20
     private var isMaleSected: Boolean = true
@@ -27,6 +27,7 @@ class HomeViewActyivity : AppCompatActivity() {
     private lateinit var tvAge: TextView
     private lateinit var fbSubstractAge: FloatingActionButton
     private lateinit var fbPlusAge: FloatingActionButton
+    private lateinit var btnCalculate : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,6 +75,28 @@ class HomeViewActyivity : AppCompatActivity() {
             fbPlus(currentAge, 99, tvAge, false)
         }
 
+    }
+
+
+    private fun initComponents() {
+        cardMale = findViewById(R.id.cardMale)
+        cardFemale = findViewById(R.id.cardFemale)
+        tvHeight = findViewById(R.id.tvHeight)
+        rsHeight = findViewById(R.id.rsHeight)
+        tvWeight = findViewById(R.id.tvWeight)
+        fbSubstractWeight = findViewById(R.id.fbSubtractWeight)
+        fbPlusWeight = findViewById(R.id.fbPlusWeight)
+        tvAge = findViewById(R.id.tvAge)
+        fbSubstractAge = findViewById(R.id.fbSubtractAge)
+        fbPlusAge = findViewById(R.id.fbPlusAge)
+        btnCalculate = findViewById(R.id.btnCalculate)
+    }
+
+    private fun initUI() {
+        setGenderColor()
+        tvWeight.text = currentWeight.toString()
+        tvAge.text = currentAge.toString()
+        setGenderColor()
     }
 
     private fun fbSubstract(
@@ -130,19 +153,6 @@ class HomeViewActyivity : AppCompatActivity() {
 
     }
 
-    private fun initComponents() {
-        cardMale = findViewById(R.id.cardMale)
-        cardFemale = findViewById(R.id.cardFemale)
-        tvHeight = findViewById(R.id.tvHeight)
-        rsHeight = findViewById(R.id.rsHeight)
-        tvWeight = findViewById(R.id.tvWeight)
-        fbSubstractWeight = findViewById(R.id.fbSubtractWeight)
-        fbPlusWeight = findViewById(R.id.fbPlusWeight)
-        tvAge = findViewById(R.id.tvAge)
-        fbSubstractAge = findViewById(R.id.fbSubtractAge)
-        fbPlusAge = findViewById(R.id.fbPlusAge)
-    }
-
     private fun setGenderColor() {
         cardMale.setCardBackgroundColor(getBackgroundColor(isMaleSected))
         cardFemale.setCardBackgroundColor(getBackgroundColor(isFemaleSelected))
@@ -157,10 +167,5 @@ class HomeViewActyivity : AppCompatActivity() {
         return ContextCompat.getColor(this, realColor)
     }
 
-    private fun initUI() {
-        setGenderColor()
-        tvWeight.text = currentWeight.toString()
-        tvAge.text = currentAge.toString()
-        setGenderColor()
-    }
 }
+
