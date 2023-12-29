@@ -1,6 +1,7 @@
 package com.patron.masacoporal
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,7 +18,7 @@ import kotlin.math.pow
 class HomeViewActyivity : AppCompatActivity() {
     private var currentWeight: Int = 60
     private var currentAge: Int = 20
-    private var currentHeight : Int = 120
+    private var currentHeight: Int = 120
     private var isMaleSected: Boolean = true
     private var isFemaleSelected: Boolean = false
     private lateinit var cardMale: CardView
@@ -30,8 +31,12 @@ class HomeViewActyivity : AppCompatActivity() {
     private lateinit var tvAge: TextView
     private lateinit var fbSubstractAge: FloatingActionButton
     private lateinit var fbPlusAge: FloatingActionButton
-    private lateinit var btnCalculate : Button
+    private lateinit var btnCalculate: Button
 
+
+    companion object {
+        const val IMC_KEY = "IMC_RESULT"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -80,12 +85,11 @@ class HomeViewActyivity : AppCompatActivity() {
 
 
         btnCalculate.setOnClickListener {
-            calculateIMC()
+            var result = calculateIMC()
+            navigateToResult(result)
         }
 
     }
-
-
 
 
     private fun initComponents() {
@@ -178,12 +182,19 @@ class HomeViewActyivity : AppCompatActivity() {
     }
 
 
-    private fun calculateIMC() {
+    private fun calculateIMC(): String {
 
-        val resultIMC = (currentHeight / (currentWeight / 100.toDouble().pow(2.0)))
+        val resultIMC =
+            String.format("%.2f", (currentHeight / (currentWeight / 100.toDouble().pow(2.0))))
+        return resultIMC
 
+    }
 
+    private fun navigateToResult(result: String) {
+        val intentResultIMC = Intent(this, ResultIMCActivity::class.java)
 
+        intentResultIMC.putExtra("IMC_KEY", result)
+        startActivity(intent)
     }
 
 

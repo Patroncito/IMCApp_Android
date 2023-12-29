@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MasaCoporal"
         tools:targetApi="31">
         <activity
+            android:name=".ResultIMCActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeViewActyivity"
             android:exported="true">
             <intent-filter>
