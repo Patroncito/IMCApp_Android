@@ -11,10 +11,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import org.w3c.dom.Text
 import java.text.DecimalFormat
+import kotlin.math.pow
+
 
 class HomeViewActyivity : AppCompatActivity() {
     private var currentWeight: Int = 60
     private var currentAge: Int = 20
+    private var currentHeight : Int = 120
     private var isMaleSected: Boolean = true
     private var isFemaleSelected: Boolean = false
     private lateinit var cardMale: CardView
@@ -75,7 +78,14 @@ class HomeViewActyivity : AppCompatActivity() {
             fbPlus(currentAge, 99, tvAge, false)
         }
 
+
+        btnCalculate.setOnClickListener {
+            calculateIMC()
+        }
+
     }
+
+
 
 
     private fun initComponents() {
@@ -143,8 +153,8 @@ class HomeViewActyivity : AppCompatActivity() {
 
     private fun rsSlider(data: Float) {
         val df = DecimalFormat("#.##")
-        val result = df.format(data)
-        tvHeight.text = "$result cm"
+        currentHeight = df.format(data).toInt()
+        tvHeight.text = "$currentHeight cm"
     }
 
     private fun changeGender() {
@@ -166,6 +176,16 @@ class HomeViewActyivity : AppCompatActivity() {
         }
         return ContextCompat.getColor(this, realColor)
     }
+
+
+    private fun calculateIMC() {
+
+        val resultIMC = (currentHeight / (currentWeight / 100.toDouble().pow(2.0)))
+
+
+
+    }
+
 
 }
 
