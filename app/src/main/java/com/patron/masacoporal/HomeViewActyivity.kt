@@ -38,8 +38,6 @@ class HomeViewActyivity : AppCompatActivity() {
         initComponents()
         initUI()
         initListeners()
-
-
     }
 
     private fun initListeners() {
