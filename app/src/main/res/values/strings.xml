@@ -9,4 +9,17 @@
     <string name="calculate">Calcular</string>
     <string name="recalculate">Re-Calcular</string>
     <string name="viewResult">Tu Resultado</string>
+    <string name="weightLow">Por debajo de lo normal</string>
+    <string name="weightLowDescription">Peso por dejabo de lo recomendado, te sugerimos ir con tu doctor.</string>
+    <string name="weightNormal">Muy bien hecho, estas en tu peso ideal. ¡Sigue asi!</string>
+    <string name="weightHigh">Sobrepeso</string>
+    <string name="weightHighDescription">Te recomendamos ir con tu doctor, para tener mejor calidad de vida</string>
+    <string name="overweight1">Obesidad Grado 1</string>
+    <string name="weightHigDescription">Estas en riesgo, la OMS recomienda visitar tu medico cuanto antes.</string>
+    <string name="overweight2">Obesidad Grado 2</string>
+    <string name="overweight2Description">Estas en riesgo alto, la OMS recomienda visitar tu medico cuanto antes.</string>
+    <string name="overweight3">Obesidad Grado 3</string>
+    <string name="overweight3Description">Estas en riesgo extremo, la OMS recomienda visitar tu medico para evitar problemas de salud mortales.</string>
+    <string name="errorStatus">Vuelve a Intentarlo</string>
+    <string name="errorDescription">Ha ocurrido un error inesperado, vulve a intentarlo para solucionarlo.</string>
 </resources>

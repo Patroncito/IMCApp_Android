@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -65,12 +66,12 @@ class HomeViewActyivity : AppCompatActivity() {
         }
 
         fbSubstractWeight.setOnClickListener {
-            fbSubstract(currentWeight, 51, tvWeight, true)
+            fbSubstract(currentWeight, 21, tvWeight, true)
 
 
         }
         fbPlusWeight.setOnClickListener {
-            fbPlus(currentWeight, 69, tvWeight, true)
+            fbPlus(currentWeight, 199, tvWeight, true)
 
         }
 
@@ -184,16 +185,18 @@ class HomeViewActyivity : AppCompatActivity() {
 
     private fun calculateIMC(): String {
 
-        val resultIMC =
-            String.format("%.2f", (currentHeight / (currentWeight / 100.toDouble().pow(2.0))))
-        return resultIMC
+        val weightDouble = currentWeight.toDouble()
+        val heightDouble = currentHeight.toDouble()
+        val imcFinal = String.format("%.2f", (weightDouble / (heightDouble / 100).pow(2.0))).toDouble()
+        Log.i("Resultado", imcFinal.toString())
+        return imcFinal.toString()
+
 
     }
 
     private fun navigateToResult(result: String) {
-        val intentResultIMC = Intent(this, ResultIMCActivity::class.java)
-
-        intentResultIMC.putExtra("IMC_KEY", result)
+        val intent = Intent(this, ResultIMCActivity::class.java)
+        intent.putExtra(IMC_KEY, result)
         startActivity(intent)
     }
 
