@@ -36,6 +36,7 @@ class HomeViewActyivity : AppCompatActivity() {
         // (":)")
 
         initComponents()
+        initUI()
         initListeners()
 
 
@@ -118,11 +119,9 @@ class HomeViewActyivity : AppCompatActivity() {
         tvHeight = findViewById(R.id.tvHeight)
         rsHeight = findViewById(R.id.rsHeight)
         tvWeight = findViewById(R.id.tvWeight)
-        tvWeight.text = currentWeight.toString()
         fbSubstractWeight = findViewById(R.id.fbSubtractWeight)
         fbPlusWeight = findViewById(R.id.fbPlusWeight)
         tvAge = findViewById(R.id.tvAge)
-        tvAge.text = currentAge.toString()
         fbSubstractAge = findViewById(R.id.fbSubtractAge)
         fbPlusAge = findViewById(R.id.fbPlusAge)
     }
@@ -139,5 +138,12 @@ class HomeViewActyivity : AppCompatActivity() {
             R.color.background_component
         }
         return ContextCompat.getColor(this, realColor)
+    }
+
+    private fun initUI(){
+        setGenderColor()
+        tvWeight.text = currentWeight.toString()
+        tvAge.text = currentAge.toString()
+        setGenderColor()
     }
 }
