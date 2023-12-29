@@ -23,4 +23,8 @@
     <string name="errorStatus">Vuelve a Intentarlo</string>
     <string name="errorDescription">Ha ocurrido un error inesperado, vulve a intentarlo para solucionarlo.</string>
     <string name="normalWeight">Normal</string>
+    <string name="icon_men">Icono Hombre</string>
+    <string name="icon_female">Icono Femenino\n</string>
+    <string name="subtract">Disminuir</string>
+    <string name="plus">Sumar</string>
 </resources>

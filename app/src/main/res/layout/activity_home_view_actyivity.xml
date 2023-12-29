@@ -31,7 +31,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_male"
-                app:tint="@color/white" />
+                app:tint="@color/white"
+                android:contentDescription="@string/icon_men" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,7 +69,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/female"
-                app:tint="@color/white" />
+                app:tint="@color/white"
+                android:contentDescription="@string/icon_female" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -186,7 +188,8 @@
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/subtract"
                     app:backgroundTint="@color/background_fab"
-                    app:tint="@color/white" />
+                    app:tint="@color/white"
+                    android:contentDescription="@string/subtract" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fbPlusWeight"
@@ -194,7 +197,8 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus"
                     app:backgroundTint="@color/background_fab"
-                    app:tint="@color/white" />
+                    app:tint="@color/white"
+                    android:contentDescription="@string/plus" />
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -256,7 +260,8 @@
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/subtract"
                     app:backgroundTint="@color/background_fab"
-                    app:tint="@color/white" />
+                    app:tint="@color/white"
+                    android:contentDescription="@string/subtract" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fbPlusAge"
@@ -264,7 +269,8 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/plus"
                     app:backgroundTint="@color/background_fab"
-                    app:tint="@color/white" />
+                    app:tint="@color/white"
+                    android:contentDescription="@string/plus"/>
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>
