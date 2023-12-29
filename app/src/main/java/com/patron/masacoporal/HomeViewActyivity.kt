@@ -8,11 +8,13 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
+import org.w3c.dom.Text
 import java.text.DecimalFormat
 
 class HomeViewActyivity : AppCompatActivity() {
 
     private var currentWeight : Int = 60
+    private var currentAge : Int = 20
     private var isMaleSected: Boolean = true
     private var isFemaleSelected : Boolean = false
     private lateinit var cardMale: CardView
@@ -22,6 +24,9 @@ class HomeViewActyivity : AppCompatActivity() {
     private lateinit var tvWeight : TextView
     private lateinit var fbSubstractWeight : FloatingActionButton
     private lateinit var fbPlusWeight : FloatingActionButton
+    private lateinit var tvAge : TextView
+    private lateinit var fbSubstractAge : FloatingActionButton
+    private lateinit var fbPlusAge : FloatingActionButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,30 +53,59 @@ class HomeViewActyivity : AppCompatActivity() {
             setGenderColor()
         }
         rsHeight.addOnChangeListener { _, data, _ ->
-            val df = DecimalFormat("#.##")
-            val result = df.format(data)
-            tvHeight.text = "$result cm"
+            rsSlider(data)
 
         }
 
         fbSubstractWeight.setOnClickListener{
-            if (currentWeight >= 21) {
-                currentWeight--
-                tvWeight.text = currentWeight.toString()
-            }
+            fbSubstract(currentWeight, 51, tvWeight, true)
+
 
         }
         fbPlusWeight.setOnClickListener{
-            // Sumar a la edad
-            if (currentWeight <= 199) {
-                currentWeight++
-                tvWeight.text = currentWeight.toString()
-            }
-
+            fbPlus(currentWeight, 69, tvWeight, true)
 
         }
 
+        fbSubstractAge.setOnClickListener{
+            fbSubstract(currentAge, 17, tvAge, false)
+
+        }
+
+        fbPlusAge.setOnClickListener{
+            fbPlus(currentAge, 99, tvAge, false)
+        }
+
     }
+
+    private fun fbSubstract(currentValue : Int , minLimit : Int, textView : TextView, isWeightBtn : Boolean ){
+
+        var updatedValue = currentValue
+        if (currentValue >= minLimit) {
+            updatedValue--
+            textView.text = updatedValue.toString()
+
+            if (isWeightBtn) {currentWeight-- } else { currentAge--}
+
+        }
+    }
+
+    private fun fbPlus(currentValue : Int , maxValue : Int, textView : TextView, isWeightBtn : Boolean){
+
+
+        var updateValue = currentValue
+        if (currentValue <= maxValue) {
+            updateValue++
+            textView.text = updateValue.toString()
+
+            if (isWeightBtn) {currentWeight++ } else { currentAge++}
+
+        }
+    }
+    private fun rsSlider(data : Float) {
+        val df = DecimalFormat("#.##")
+        val result = df.format(data)
+        tvHeight.text = "$result cm"    }
 
     private fun changeGender(){
             isMaleSected = !isMaleSected
@@ -87,6 +121,10 @@ class HomeViewActyivity : AppCompatActivity() {
         tvWeight.text = currentWeight.toString()
         fbSubstractWeight = findViewById(R.id.fbSubtractWeight)
         fbPlusWeight = findViewById(R.id.fbPlusWeight)
+        tvAge = findViewById(R.id.tvAge)
+        tvAge.text = currentAge.toString()
+        fbSubstractAge = findViewById(R.id.fbSubtractAge)
+        fbPlusAge = findViewById(R.id.fbPlusAge)
     }
 
     private fun setGenderColor() {
