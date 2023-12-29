@@ -13,20 +13,20 @@ import java.text.DecimalFormat
 
 class HomeViewActyivity : AppCompatActivity() {
 
-    private var currentWeight : Int = 60
-    private var currentAge : Int = 20
+    private var currentWeight: Int = 60
+    private var currentAge: Int = 20
     private var isMaleSected: Boolean = true
-    private var isFemaleSelected : Boolean = false
+    private var isFemaleSelected: Boolean = false
     private lateinit var cardMale: CardView
     private lateinit var cardFemale: CardView
-    private lateinit var tvHeight : TextView
-    private lateinit var rsHeight : RangeSlider
-    private lateinit var tvWeight : TextView
-    private lateinit var fbSubstractWeight : FloatingActionButton
-    private lateinit var fbPlusWeight : FloatingActionButton
-    private lateinit var tvAge : TextView
-    private lateinit var fbSubstractAge : FloatingActionButton
-    private lateinit var fbPlusAge : FloatingActionButton
+    private lateinit var tvHeight: TextView
+    private lateinit var rsHeight: RangeSlider
+    private lateinit var tvWeight: TextView
+    private lateinit var fbSubstractWeight: FloatingActionButton
+    private lateinit var fbPlusWeight: FloatingActionButton
+    private lateinit var tvAge: TextView
+    private lateinit var fbSubstractAge: FloatingActionButton
+    private lateinit var fbPlusAge: FloatingActionButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +34,6 @@ class HomeViewActyivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_view_actyivity)
         // (":)")
-
         initComponents()
         initUI()
         initListeners()
@@ -42,12 +41,12 @@ class HomeViewActyivity : AppCompatActivity() {
 
     private fun initListeners() {
 
-        cardMale.setOnClickListener{
+        cardMale.setOnClickListener {
             changeGender()
-            setGenderColor( )
+            setGenderColor()
         }
 
-        cardFemale.setOnClickListener{
+        cardFemale.setOnClickListener {
             changeGender()
             setGenderColor()
         }
@@ -56,61 +55,81 @@ class HomeViewActyivity : AppCompatActivity() {
 
         }
 
-        fbSubstractWeight.setOnClickListener{
+        fbSubstractWeight.setOnClickListener {
             fbSubstract(currentWeight, 51, tvWeight, true)
 
 
         }
-        fbPlusWeight.setOnClickListener{
+        fbPlusWeight.setOnClickListener {
             fbPlus(currentWeight, 69, tvWeight, true)
 
         }
 
-        fbSubstractAge.setOnClickListener{
+        fbSubstractAge.setOnClickListener {
             fbSubstract(currentAge, 17, tvAge, false)
 
         }
 
-        fbPlusAge.setOnClickListener{
+        fbPlusAge.setOnClickListener {
             fbPlus(currentAge, 99, tvAge, false)
         }
 
     }
 
-    private fun fbSubstract(currentValue : Int , minLimit : Int, textView : TextView, isWeightBtn : Boolean ){
+    private fun fbSubstract(
+        currentValue: Int,
+        minLimit: Int,
+        textView: TextView,
+        isWeightBtn: Boolean
+    ) {
 
         var updatedValue = currentValue
         if (currentValue >= minLimit) {
             updatedValue--
             textView.text = updatedValue.toString()
 
-            if (isWeightBtn) {currentWeight-- } else { currentAge--}
+            if (isWeightBtn) {
+                currentWeight--
+            } else {
+                currentAge--
+            }
 
         }
     }
 
-    private fun fbPlus(currentValue : Int , maxValue : Int, textView : TextView, isWeightBtn : Boolean){
-
+    private fun fbPlus(
+        currentValue: Int,
+        maxValue: Int,
+        textView: TextView,
+        isWeightBtn: Boolean
+    ) {
 
         var updateValue = currentValue
         if (currentValue <= maxValue) {
             updateValue++
             textView.text = updateValue.toString()
 
-            if (isWeightBtn) {currentWeight++ } else { currentAge++}
+            if (isWeightBtn) {
+                currentWeight++
+            } else {
+                currentAge++
+            }
 
         }
     }
-    private fun rsSlider(data : Float) {
+
+    private fun rsSlider(data: Float) {
         val df = DecimalFormat("#.##")
         val result = df.format(data)
-        tvHeight.text = "$result cm"    }
+        tvHeight.text = "$result cm"
+    }
 
-    private fun changeGender(){
-            isMaleSected = !isMaleSected
-            isFemaleSelected = !isFemaleSelected
+    private fun changeGender() {
+        isMaleSected = !isMaleSected
+        isFemaleSelected = !isFemaleSelected
 
     }
+
     private fun initComponents() {
         cardMale = findViewById(R.id.cardMale)
         cardFemale = findViewById(R.id.cardFemale)
@@ -129,8 +148,8 @@ class HomeViewActyivity : AppCompatActivity() {
         cardFemale.setCardBackgroundColor(getBackgroundColor(isFemaleSelected))
     }
 
-    private fun getBackgroundColor(isCardSelected : Boolean): Int{
-        val realColor  = if (isCardSelected){
+    private fun getBackgroundColor(isCardSelected: Boolean): Int {
+        val realColor = if (isCardSelected) {
             R.color.background_component_selected
         } else {
             R.color.background_component
@@ -138,7 +157,7 @@ class HomeViewActyivity : AppCompatActivity() {
         return ContextCompat.getColor(this, realColor)
     }
 
-    private fun initUI(){
+    private fun initUI() {
         setGenderColor()
         tvWeight.text = currentWeight.toString()
         tvAge.text = currentAge.toString()
