@@ -3,8 +3,11 @@ package com.patron.masacoporal
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import com.google.android.material.slider.RangeSlider
+import java.text.DecimalFormat
 
 class HomeViewActyivity : AppCompatActivity() {
 
@@ -12,6 +15,8 @@ class HomeViewActyivity : AppCompatActivity() {
     private var isFemaleSelected : Boolean = false
     private lateinit var cardMale: CardView
     private lateinit var cardFemale: CardView
+    private lateinit var tvHeight : TextView
+    private lateinit var rsHeight : RangeSlider
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -36,6 +41,12 @@ class HomeViewActyivity : AppCompatActivity() {
             changeGender()
             setGenderColor()
         }
+        rsHeight.addOnChangeListener { _, data, _ ->
+            val df = DecimalFormat("#.##")
+            val result = df.format(data)
+            tvHeight.text = "$result cm"
+
+        }
     }
 
     private fun changeGender(){
@@ -46,6 +57,8 @@ class HomeViewActyivity : AppCompatActivity() {
     private fun initComponents() {
         cardMale = findViewById(R.id.cardMale)
         cardFemale = findViewById(R.id.cardFemale)
+        tvHeight = findViewById(R.id.tvHeight)
+        rsHeight = findViewById(R.id.rsHeight)
     }
 
     private fun setGenderColor() {

@@ -2,5 +2,6 @@
     <string name="app_name">Masa Coporal</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
-
+    <string name="height">Altura</string>
+    <string name="placeHolderHeight">120 cm</string>
 </resources>
