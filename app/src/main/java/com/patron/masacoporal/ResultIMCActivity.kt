@@ -1,14 +1,11 @@
 package com.patron.masacoporal
 
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.patron.masacoporal.HomeViewActyivity.Companion.IMC_KEY
-import org.w3c.dom.Text
 
 class ResultIMCActivity : AppCompatActivity() {
 
@@ -50,7 +47,7 @@ class ResultIMCActivity : AppCompatActivity() {
             }
 
             in 18.5..24.9 -> {
-                tvStatus.text = "Normal"
+                tvStatus.text = getString(R.string.normalWeight)
                 tvStatus.setTextColor(ContextCompat.getColor(this, R.color.azulClaro))
                 tvDescription.text = getString(R.string.weightNormal)
 

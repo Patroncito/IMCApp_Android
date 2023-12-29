@@ -1,6 +1,5 @@
 package com.patron.masacoporal
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,7 +10,6 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
-import org.w3c.dom.Text
 import java.text.DecimalFormat
 import kotlin.math.pow
 
@@ -86,7 +84,7 @@ class HomeViewActyivity : AppCompatActivity() {
 
 
         btnCalculate.setOnClickListener {
-            var result = calculateIMC()
+            val result = calculateIMC()
             navigateToResult(result)
         }
 

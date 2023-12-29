@@ -22,4 +22,5 @@
     <string name="overweight3Description">Estas en riesgo extremo, la OMS recomienda visitar tu medico para evitar problemas de salud mortales.</string>
     <string name="errorStatus">Vuelve a Intentarlo</string>
     <string name="errorDescription">Ha ocurrido un error inesperado, vulve a intentarlo para solucionarlo.</string>
+    <string name="normalWeight">Normal</string>
 </resources>
