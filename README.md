@@ -20,9 +20,9 @@ This application has an easy and intuitive interface to carry out the body mass 
 
 ## Screenshots
 
-![Home Screen](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen2.png)
-![Result Screen](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen1.png)
-![Result Screen](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen3.png)
+![Home Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen2.png)
+![Result Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen1.png)
+![Result Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen3.png)
 
 ## How to use
 
