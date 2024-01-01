@@ -8,21 +8,15 @@ This application has an easy and intuitive interface to carry out the body mass 
 ## Índice
 
 - [Characteristics](#características)
-- [Screenshots](#capturas-de-pantalla)
 - [How to use](#cómo-usar)
 - [Technologies Used](#tecnologías-utilizadas)
+- [Screenshots](#capturas-de-pantalla)
 
 ## Characteristics
 
 - Intuitive interface
 - It informs you if you are at health risk through your weight.
 - Fast and Efficient
-
-## Screenshots
-
-![Home Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen2.png)
-![Result Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen1.png)
-![Result Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen3.png)
 
 ## How to use
 
@@ -37,4 +31,10 @@ This application has an easy and intuitive interface to carry out the body mass 
 - Android SDK 21 (Android 5.0)
 - Android Studio
 - Git
+
+## Screenshots
+
+![Home Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen2.png)
+![Result Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen1.png)
+![Result Screen|100](https://github.com/Patroncito/IMCApp_Android/raw/main/app/sampledata/screen3.png)
 
